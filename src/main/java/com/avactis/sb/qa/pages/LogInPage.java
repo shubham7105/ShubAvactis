@@ -3,10 +3,13 @@ package com.avactis.sb.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.avactis.sb.qa.base.ProjectBase;
 
 public class LogInPage extends ProjectBase {
+	
+	
 	
 	//Page Factory
 	
@@ -19,8 +22,8 @@ public class LogInPage extends ProjectBase {
 	@FindBy(xpath="//input[@type=\"submit\" and @value=\"Sign In\"]")
 	WebElement logInButton;
 	
-	@FindBy(xpath="//a[text()=Register")
-	WebElement RegisterLink;
+	@FindBy(xpath="//a[text()=\"Register\"]")
+	WebElement registerLink;
 
 	@FindBy(xpath="//a[@class=site-logo]")
 	WebElement avactisLogo;
@@ -47,7 +50,12 @@ public class LogInPage extends ProjectBase {
 		return new HomePage();
 	}
 	
-	
+	public RegisterPage registerUser() {
+		 wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
+		
+		return new RegisterPage();
+		
+	}
 	
 }
 

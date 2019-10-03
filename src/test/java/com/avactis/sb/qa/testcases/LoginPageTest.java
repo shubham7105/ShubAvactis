@@ -3,6 +3,7 @@ package com.avactis.sb.qa.testcases;
 import com.avactis.sb.qa.base.ProjectBase;
 import com.avactis.sb.qa.pages.HomePage;
 import com.avactis.sb.qa.pages.LogInPage;
+import com.avactis.sb.qa.pages.RegisterPage;
 
 import junit.framework.Assert;
 
@@ -15,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 public class LoginPageTest extends ProjectBase{
 	LogInPage loginPage;
 	HomePage homePage;
+	RegisterPage registerPage;
 	
 	
 	public LoginPageTest() {
@@ -40,12 +42,18 @@ public class LoginPageTest extends ProjectBase{
 		Assert.assertTrue(flag);
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, enabled=false)
 	public void loginTest() {
 		homePage =loginPage.login(prop.getProperty("uname"), prop.getProperty("pass"));
 	}
 	
-	@AfterClass
+	@Test(priority=3)
+	public void registerForm() {
+		registerPage = loginPage.registerUser();
+	}
+	
+	
+	//@AfterClass
 	public void tearDown() {
 		driver.quit();
 	}
