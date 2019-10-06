@@ -20,6 +20,7 @@ public class ProjectBase {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static 	WebDriverWait wait;
+	public static Actions builder;
 
 	public ProjectBase() {
 		
@@ -57,6 +58,7 @@ public class ProjectBase {
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+			builder = new Actions(driver);
 			wait = new WebDriverWait(driver,30);
 			driver.get(prop.getProperty("url"));
 			

@@ -8,9 +8,6 @@ import com.avactis.sb.qa.pages.RegisterPage;
 import junit.framework.Assert;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 public class LoginPageTest extends ProjectBase{
@@ -29,6 +26,8 @@ public class LoginPageTest extends ProjectBase{
 		loginPage = new LogInPage();
 	}
 	
+	
+	
 	@Test(priority=1)
 	public void loginPageTitileTest() {
 		String title =loginPage.validatePageTitile();
@@ -42,12 +41,12 @@ public class LoginPageTest extends ProjectBase{
 		Assert.assertTrue(flag);
 	}
 	
-	@Test(priority=3, enabled=false)
+	@Test(priority=2)
 	public void loginTest() {
 		homePage =loginPage.login(prop.getProperty("uname"), prop.getProperty("pass"));
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, enabled=false)
 	public void registerForm() {
 		registerPage = loginPage.registerUser();
 	}

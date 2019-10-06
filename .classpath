@@ -28,7 +28,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="/webdrivertraining/lib/testng-6.9.10.jar"/>
+	<classpathentry kind="lib" path="D:/Selenium Class/Setup/64-bit Java 8/eclipse-java-oxygen-3-rc2-win32-x86_64/eclipse/plugins/org.testng.eclipse_6.9.11.201604020423/lib/testng.jar" sourcepath="D:/Selenium Class/Setup/64-bit Java 8/eclipse-java-oxygen-3-rc2-win32-x86_64/eclipse/plugins/org.testng.eclipse_6.9.11.201604020423/lib/testng-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
